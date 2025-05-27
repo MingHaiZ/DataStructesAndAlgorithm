@@ -1,0 +1,43 @@
+package leetCodeHot100;
+
+import java.util.List;
+
+//删除倒数的第n个节点
+public class Test19 {
+
+    private ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummyhead = new ListNode();
+        dummyhead.next = head;
+        ListNode slow = dummyhead;
+        ListNode fast = dummyhead;
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        if (slow.next != null) {
+            slow.next = slow.next.next;
+        }
+        return dummyhead.next;
+    }
+
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+}

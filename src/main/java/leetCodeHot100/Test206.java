@@ -10,13 +10,12 @@ public class Test206 {
 
     private ListNode reverseList(ListNode head) {
         ListNode prev = null;
-
-        while (head != null) {
-            ListNode current = head;
-            ListNode next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
+        ListNode cur = head;
+        while(cur!=null){
+            ListNode next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
         }
         return prev;
     }
