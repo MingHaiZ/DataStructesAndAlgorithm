@@ -4,10 +4,9 @@ package leetCode;
 public class Test19 {
 
     private ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummyhead = new ListNode();
-        dummyhead.next = head;
-        ListNode slow = dummyhead;
-        ListNode fast = dummyhead;
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode slow = dummy, fast = dummy;
         for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
@@ -15,10 +14,10 @@ public class Test19 {
             fast = fast.next;
             slow = slow.next;
         }
-        if (slow.next != null) {
+        if (slow != null) {
             slow.next = slow.next.next;
         }
-        return dummyhead.next;
+        return dummy.next;
     }
 
 

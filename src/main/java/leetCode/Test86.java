@@ -41,8 +41,7 @@ public class Test86 {
 
     }
 
-
-    class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
 
@@ -53,11 +52,13 @@ public class Test86 {
             this.val = val;
         }
 
-        ListNode(int val, leetCode.ListNode next) {
+        ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
     }
+
+
 }
 
 
